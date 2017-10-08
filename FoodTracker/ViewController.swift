@@ -22,7 +22,9 @@ class ViewController: UIViewController {
 
     
     //MARK: Actions
-    @IBOutlet weak var setDefaultLabelText: UIButton!
+    @IBAction func setDefaultLabelText(_ sender: UIButton) {
+        mealNameLabel.text = "Default Text"
+    }
 
 }
 
