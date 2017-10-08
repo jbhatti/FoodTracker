@@ -56,7 +56,9 @@
                             <outlet property="delegate" destination="Pu8-Nf-njS" id="QSI-Z4-wcU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Meals" id="sk6-b2-4JF"/>
+                    <navigationItem key="navigationItem" title="Your Meals" id="sk6-b2-4JF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U18-Tm-eS4"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltf-Bg-u82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
