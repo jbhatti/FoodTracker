@@ -57,7 +57,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="sk6-b2-4JF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U18-Tm-eS4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U18-Tm-eS4">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="cOX-B0-nAa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltf-Bg-u82" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +128,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1183" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nxc-Nz-ejz">
