@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     }
 
     
-
+    //MARK: Actions
+    @IBOutlet weak var setDefaultLabelText: UIButton!
 
 }
 
