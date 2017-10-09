@@ -45,6 +45,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     {
         
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
 
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
