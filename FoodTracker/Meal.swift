@@ -47,4 +47,12 @@ class Meal: NSObject, NSCoding
         self.rating = rating
     }
     
+    //MARK: NSCoding
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(photo, forKey: PropertyKey.photo)
+        aCoder.encode(rating, forKey: PropertyKey.rating)
+    }
+    
 }
