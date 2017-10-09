@@ -108,6 +108,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    //MARK: Private Methods
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
 
 }
 
