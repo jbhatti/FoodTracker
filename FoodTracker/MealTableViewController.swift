@@ -19,6 +19,8 @@ class MealTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        sendRequest()
 
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
@@ -178,6 +180,81 @@ class MealTableViewController: UITableViewController
             saveMeals()
         }
     }
+    
+    //MARK: Network Request
+    func sendRequest() {
+        /* Configure session, choose between:
+         * defaultSessionConfiguration
+         * ephemeralSessionConfiguration
+         * backgroundSessionConfigurationWithIdentifier:
+         And set session-wide properties, such as: HTTPAdditionalHeaders,
+         HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
+         */
+        let sessionConfig = URLSessionConfiguration.default
+        
+        /* Create session, and optionally set a URLSessionDelegate. */
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        
+        /* Create the Request:
+         Get Meals (GET https://cloud-tracker.herokuapp.com/users/me/meals)
+         */
+        
+        guard var URL = URL(string: "https://cloud-tracker.herokuapp.com/users/me/meals") else {return}
+        var request = URLRequest(url: URL)
+        request.httpMethod = "GET"
+        
+        // Headers
+        
+        request.addValue("DN1w7UacK5eDhAy9Q3TWWoVG", forHTTPHeaderField: "token")
+        request.addValue("application/JSON", forHTTPHeaderField: "Content-Type")
+        
+        /* Start a new Task */
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("URL Session Task Succeeded: HTTP \(statusCode)")
+            }
+            else {
+                // Failure
+                print("URL Session Task Failed: %@", error!.localizedDescription);
+            }
+            
+            
+            
+            var result: Array<Dictionary<String,Any>>?
+            
+            do
+            {
+                result = try JSONSerialization.jsonObject(with: data!, options: []) as? Array<Dictionary<String,Any>>
+            }
+            catch
+            {
+                print(error)
+            }
+            
+            
+            guard let dict = result else
+            {
+                return
+            }
+            for item in dict
+            {
+                if let title = item["title"] as? String
+                {
+                    print(#line, title)
+                }
+            }
+            
+            
+            
+            
+            
+        })
+        task.resume()
+        session.finishTasksAndInvalidate()
+    }
+
     
     
     //MARK: Private Methods

@@ -145,6 +145,46 @@
             </objects>
             <point key="canvasLocation" x="2120.8000000000002" y="138.98050974512745"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PkI-9G-jFZ">
+            <objects>
+                <viewController id="TNg-cr-5k3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1cf-i9-mSz"/>
+                        <viewControllerLayoutGuide type="bottom" id="bGy-55-lbI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FbW-0O-FpT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ig-HJ-kmb">
+                                <rect key="frame" x="16" y="281" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tER-ke-L5E">
+                                <rect key="frame" x="16" y="319" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ig-HJ-kmb" firstAttribute="trailing" secondItem="tER-ke-L5E" secondAttribute="trailing" id="GqU-4Q-aDq"/>
+                            <constraint firstItem="tER-ke-L5E" firstAttribute="top" secondItem="9Ig-HJ-kmb" secondAttribute="bottom" constant="8" symbolic="YES" id="HAZ-tx-zt9"/>
+                            <constraint firstItem="tER-ke-L5E" firstAttribute="centerY" secondItem="FbW-0O-FpT" secondAttribute="centerY" id="T18-uH-ai3"/>
+                            <constraint firstItem="9Ig-HJ-kmb" firstAttribute="leading" secondItem="FbW-0O-FpT" secondAttribute="leadingMargin" id="ZpG-tk-ihY"/>
+                            <constraint firstItem="9Ig-HJ-kmb" firstAttribute="leading" secondItem="tER-ke-L5E" secondAttribute="leading" id="jsP-oI-oU0"/>
+                            <constraint firstItem="9Ig-HJ-kmb" firstAttribute="trailing" secondItem="FbW-0O-FpT" secondAttribute="trailingMargin" id="ygI-QY-vX6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJx-So-e93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1413.5999999999999" y="141.67916041979012"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nxc-Nz-ejz">
             <objects>

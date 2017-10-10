@@ -18,8 +18,8 @@ class Meal: NSObject, NSCoding
     var name: String
     var photo: UIImage?
     var rating: Int
-    var calories: Int
-    var mealDescription: String
+//    var calories: Int
+//    var mealDescription: String
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
